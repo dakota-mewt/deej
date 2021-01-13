@@ -4,7 +4,7 @@ You can find the original deej github by clicking [here](https://github.com/omri
 
 deej is an **open-source hardware volume mixer** for Windows and Linux PCs. It lets you **seamlessly control the volumes of different apps** (such as your music player, the game you're playing and your voice chat session) without having to stop what you're doing.
 
-![deejdemo](deej-demo-lowrez.gif)
+![deejdemo](images/deej-demo-lowrez.gif)
 
 
 ## How to install 
