@@ -4,14 +4,22 @@ You can find the original deej github by clicking [here](https://github.com/omri
 
 deej is an **open-source hardware volume mixer** for Windows and Linux PCs. It lets you **seamlessly control the volumes of different apps** (such as your music player, the game you're playing and your voice chat session) without having to stop what you're doing.
 
+![deejdemo](deej-demo-lowrez.gif)
+
+
+## How to install 
+1. Make sure to have your Microbit UNPLUGGED from your Windows PC
+2. Download and run [deej-setup.exe](https://github.com/dakota-mewt/mewt/blob/main/deej/deej-setup.exe)
+3. Follow the onscreen prompt
+
+## How to run
+- run C:\deej\deej.exe
+
 **Join the [deej Discord server](https://discord.gg/nf88NJu) if you need help or have any questions!**
 
 [![Discord](https://img.shields.io/discord/702940502038937667?logo=discord)](https://discord.gg/nf88NJu)
 
-deej Microbit consists of a [lightweight desktop client](#features) written in Go, and a Microbit-based hardware setup that's simple and almost plug-and-play.
 
-This is the very first deej ever built.  
-![The OG shoebox build](https://github.com/omriharel/deej/blob/master/assets/build.jpg)
 
 ## Table of contents
 
@@ -19,10 +27,6 @@ This is the very first deej ever built.
 - [How it works](#how-it-works)
   - [Software](#software)
 - [Slider mapping (configuration)](#slider-mapping-configuration)
-- [How to run](#how-to-run)
-  - [Requirements](#requirements)
-  - [Download and installation](#download-and-installation)
-  - [Building from source](#building-from-source)
 - [Community](#community)
 - [Long-ish term roadmap](#long-ish-term-roadmap)
 - [License](#license)
@@ -95,19 +99,6 @@ noise_reduction: default
 
 
 
-## How to run
-
-### Requirements
-
-#### Windows
-
-- Windows. That's it
-
-#### Linux
-
-- Install `libgtk-3-dev`, `libappindicator3-dev` and `libwebkit2gtk-4.0-dev` for system tray support
-
-### Download and installation
 
 
 
