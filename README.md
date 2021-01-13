@@ -112,7 +112,7 @@ The server is also a great place to ask questions, suggest features or report bu
 
 ### Donations
 
-If you love deej and want to show your support for this project, you can do so using the link below. Please don't feel obligated to donate - building the project and telling your friends about it goes a very long way! Thank you very much.
+If you love deej and want to show your support for the original developer of this project (I just ported it from Arduino to the Microbit), you can do so using the link below. Please don't feel obligated to donate - building the project and telling your friends about it goes a very long way! Thank you very much.
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/omriharel)
 
