@@ -1,31 +1,24 @@
-# deej
+# deej Microbit
 
-deej is an **open-source hardware volume mixer** for Windows and Linux PCs. It lets you use real-life sliders (like a DJ!) to **seamlessly control the volumes of different apps** (such as your music player, the game you're playing and your voice chat session) without having to stop what you're doing.
+You can find the original deej github by clicking [here](https://github.com/omriharel/deej)
+
+deej is an **open-source hardware volume mixer** for Windows and Linux PCs. It lets you **seamlessly control the volumes of different apps** (such as your music player, the game you're playing and your voice chat session) without having to stop what you're doing.
 
 **Join the [deej Discord server](https://discord.gg/nf88NJu) if you need help or have any questions!**
 
 [![Discord](https://img.shields.io/discord/702940502038937667?logo=discord)](https://discord.gg/nf88NJu)
 
-deej consists of a [lightweight desktop client](#features) written in Go, and an Arduino-based hardware setup that's simple and cheap to build. [**Check out some versions built by members of our community!**](./community.md)
+deej Microbit consists of a [lightweight desktop client](#features) written in Go, and a Microbit-based hardware setup that's simple and almost plug-and-play.
 
-**[Download the latest release](https://github.com/omriharel/deej/releases/latest) | [Video demonstration](https://youtu.be/VoByJ4USMr8) | [Build video by Tech Always](https://youtu.be/x2yXbFiiAeI)**
-
-
-![The OG shoebox build](assets/build.jpg)
+This is the very first deej ever built.  
+![The OG shoebox build](https://github.com/omriharel/deej/blob/master/assets/build.jpg)
 
 ## Table of contents
 
 - [Features](#features)
 - [How it works](#how-it-works)
-  - [Hardware](#hardware)
-    - [Schematic](#schematic)
   - [Software](#software)
 - [Slider mapping (configuration)](#slider-mapping-configuration)
-- [Build your own!](#build-your-own)
-  - [Build video](#build-video)
-  - [Bill of Materials](#bill-of-materials)
-  - [Thingiverse collection](#thingiverse-collection)
-  - [Build procedure](#build-procedure)
 - [How to run](#how-to-run)
   - [Requirements](#requirements)
   - [Download and installation](#download-and-installation)
@@ -50,22 +43,10 @@ deej is written in Go and [distributed](https://github.com/omriharel/deej/releas
 - Runs from your system tray
 - Helpful notifications to let you know if something isn't working
 
-> **Looking for the older Python version?** It's no longer maintained, but you can always find it in the [`legacy-python` branch](https://github.com/omriharel/deej/tree/legacy-python).
-
 ## How it works
-
-### Hardware
-
-- The sliders are connected to 5 (or as many as you like) analog pins on an Arduino Nano/Uno board. They're powered from the board's 5V output (see schematic)
-- The board connects via a USB cable to the PC
-
-#### Schematic
-
-![Hardware schematic](assets/schematic.png)
 
 ### Software
 
-- The code running on the Arduino board is a [C program](./arduino/deej-5-sliders-vanilla/deej-5-sliders-vanilla.ino) constantly writing current slider values over its serial interface
 - The PC runs a lightweight Go client [`cmd/main.go`](./cmd/main.go) in the background. This client reads the serial stream and adjusts app volumes according to the given configuration file
 
 ## Slider mapping (configuration)
@@ -112,45 +93,7 @@ noise_reduction: default
     - control more than one app with a single slider
     - choose whichever process in the group that's currently running (i.e. to have one slider control any game you're playing)
 
-## Build your own!
 
-Building `deej` is very simple. You only need a few relatively cheap parts - it's an excellent starter project (and my first Arduino project, personally). Remember that if you need any help or have a question that's not answered here, you can always [join the deej Discord server](https://discord.gg/nf88NJu).
-
-Build `deej` for yourself, or as an awesome gift for your gaming buddies!
-
-### Build video
-
-In case you prefer watching to reading, Charles from the [**Tech Always**](https://www.youtube.com/c/TechAlways) YouTube channel has made [**a fantastic video**](https://youtu.be/x2yXbFiiAeI) that covers the basics of building deej for yourself, including parts, costs, assembly and software. I highly recommend checking it out!
-
-### Bill of Materials
-
-- An Arduino Nano, Pro Micro or Uno board
-  - I officially recommend using a Nano or a Pro Micro for their smaller form-factor, friendlier USB connectors and more analog pins. Plus they're cheaper
-  - You can also use any other development board that has a Serial over USB interface
-- A few slider potentiometers, up to your number of free analog pins (the cheaper ones cost around 1-2 USD each, and come with a standard 10K Ohm variable resistor. These _should_ work just fine for this project)
-  - **Important:** make sure to get **linear** sliders, not logarithmic ones! Check the product description
-  - You can also use circular knobs if you like
-- Some wires
-- Any kind of box to hold everything together. **You don't need a 3D printer for this project!** It works fantastically with just a piece of cardboard or a shoebox. That being said, if you do have one, read on...
-
-### Thingiverse collection
-
-With many different 3D-printed designs being added to our [community showcase](./community.md), it felt right to gather all of them in a Thingiverse collection for you to browse. If you have access to a 3D printer, feel free to use one of the designs in your build.
-
-**[Visit our community-created design collection on Thingiverse!](https://thingiverse.com/omriharel/collections/deej)**
-
-> You can also [submit your own](https://discord.gg/nf88NJu) design to be added to the collection. Regardless, if you do upload your design to Thingiverse, _please add a `deej` tag to it so that others can find it more easily_.
-
-
-### Build procedure
-
-- Connect everything according to the [schematic](#schematic)
-- Test with a multimeter to be sure your sliders are hooked up correctly
-- Flash the Arduino chip with the sketch in [`arduino\deej-5-sliders-vanilla`](./arduino/deej-5-sliders-vanilla/deej-5-sliders-vanilla.ino)
-  - _Important:_ If you have more or less than 5 sliders, you must edit the sketch to match what you have
-- After flashing, check the serial monitor. You should see a constant stream of values separated by a pipe (`|`) character, e.g. `0|240|1023|0|483`
-  - When you move a slider, its corresponding value should move between 0 and 1023
-- Congratulations, you're now ready to run the `deej` executable!
 
 ## How to run
 
@@ -166,17 +109,7 @@ With many different 3D-printed designs being added to our [community showcase](.
 
 ### Download and installation
 
-- Head over to the [releases page](https://github.com/omriharel/deej/releases) and download the [latest version](https://github.com/omriharel/deej/releases/latest)'s executable and configuration file (`deej.exe` and `config.yaml`)
-- Place them in the same directory anywhere on your machine
-- (Optional, on Windows) Create a shortcut to `deej.exe` and copy it to `%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup` to have `deej` run on boot
 
-### Building from source
-
-If you'd rather not download a compiled executable, or want to extend `deej` or modify it to your needs, feel free to clone the repository and build it yourself. All you need is a Go 1.14 (or above) environment on your machine. If you go this route, make sure to check out the [developer scripts](./scripts).
-
-Like other Go packages, you can also use the `go get` tool: `go get -u github.com/omriharel/deej`.
-
-If you need any help with this, please [join our Discord server](https://discord.gg/nf88NJu).
 
 ## Community
 
